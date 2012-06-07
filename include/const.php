@@ -20,7 +20,7 @@ define('URL_MOBILE', 'http://'.DOMAIN_MOBILE.'/file'); // 모바일 파일
 
 define('MYSQL_HOST', 'localhost');
 define('MYSQL_USER', 'kyoe');
-define('MYSQL_PW', 'lkhoeao1008');
+define('MYSQL_PW', 'testtest');
 define('MYSQL_DB', 'test');
 define('MYSQL_PORT', 3306);
 define('MYSQL_SOCKET', null);
