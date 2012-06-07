@@ -25,7 +25,7 @@ class UserPhoto {
      */
     private static function file_dir($user_id) {
         $group = self::group_number($user_id);
-        return DIR_FILE.'/user/'.$group;
+        return DIR_MOBILE_FILE.'/user/'.$group;
     }
 
     /**
@@ -35,7 +35,7 @@ class UserPhoto {
      */
     private static function file_url($user_id) {
         $group = self::group_number($user_id);
-        return URL_FILE.'/user/'.$group;
+        return URL_MOBILE_FILE.'/user/'.$group;
     }
 
     /**

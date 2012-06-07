@@ -14,7 +14,7 @@ $photo_id = $_GET['photoid'];
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="<?=URL_WEB?>/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="<?=URL_MOBILE?>/bootstrap/css/bootstrap.min.css" />
 <style type="text/css">
 .content {
     margin:50px auto;
