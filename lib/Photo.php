@@ -2,8 +2,6 @@
 class Photo {
     /** @brief JPEG 화질 */
     const JPEG_QUALITY = 60;
-    //const DIR_FILE = '/home/kyoe/project/withblog/www/web/_dev/facechart/file';
-    //const URL_FILE = 'http://withblog.net/_dev/facechart/file';
 
     /** @brief 사진 크기 종류 */
     private static $size_list = array(80, 160, 320, 640);

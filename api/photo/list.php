@@ -1,13 +1,10 @@
 <?
-//error_reporting(E_ALL);
-//ini_set("display_errors", 1);
-
 require_once './include/startup.php';
 require_once DIR_LIB.'/Photo.php';
 
 $user_id = $_GET['user_id'];
 $photo_id = $_GET['photo_id'];
-$res = $_GET['res'];
+$callback = $_GET['callback'];
 
 $data = array();
 // 회원의 사진 목록 
@@ -31,10 +28,9 @@ if ( $photo_id ) {
 }
 
 $json_photo = json_encode($data);
-if ( $res ) {
-	echo $json_photo;
+if ( $callback ) {
+	echo $callback.'('.$json_photo.')';
 } else {
-	echo '('.$json_photo.')';
+	echo $json_photo;
 }
-
 ?>
