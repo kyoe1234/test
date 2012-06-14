@@ -6,11 +6,11 @@ $user_id = $_POST['user_id'];
 $file = $_FILES['photo'];
 
 $photo_id = Photo::add($user_id, $file, $warning);
-
-if ( !$photo_id ) {
-	$g->alert->back($warning->text);
+if ( !$photo_id ) { 
+	echo $warning->json();
 }
 
-$move_url = $_SERVER['HTTP_REFERER'].'?photo_id='.$photo_id;
-header('Location: '.$move_url);
+$photo = new Photo($photo_id);
+echo json_encode($photo->to_array());
 ?>
+

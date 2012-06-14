@@ -1,12 +1,11 @@
 <?
 //error_reporting(E_ALL);
 //ini_set("display_errors", 1);
-
 require_once './include/startup.php';
-require_once DIR_LIB.'/UserPhoto.php';
+require_once DIR_LIB.'/Photo.php';
 
-$user_id = $_GET['userid'];
-$photo_id = $_GET['photoid'];
+$user_id = $_GET['user_id'];
+$photo_id = $_GET['photo_id'];
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +13,7 @@ $photo_id = $_GET['photoid'];
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="<?=URL_MOBILE?>/bootstrap/css/bootstrap.min.css" />
+<link rel="stylesheet" href="<?=URL_WEB?>/bootstrap/css/bootstrap.min.css" />
 <style type="text/css">
 .content {
     margin:50px auto;
@@ -45,15 +44,15 @@ $photo_id = $_GET['photoid'];
 </div>
 
 <div class="container content">
-    <form action="./save.php" method="post" enctype="multipart/form-data" class="well form-inline">
-        <input type="text" name="userid" class="input-small" placeholder="idx" />
-        <input type="file" name="profile_image" id="fileInput" class="input-file" />
+    <form action="./test/save.php" method="post" enctype="multipart/form-data" class="well form-inline">
+        <input type="text" name="user_id" class="input-small" placeholder="idx" />
+        <input type="file" name="photo" id="fileInput" class="input-file" />
         <button type="submit" class="btn btn-primary">SAVE</button>
     </form>
 	<div>
 		<?
-		if ( $user_id ):
-			$user_photo = new UserPhoto($user_id);
+		if ( $photo_id ):
+			$user_photo = new Photo($photo_id);
 			$photo_list = $user_photo->photo;
 		?>
 		<ul class="thumbnails">

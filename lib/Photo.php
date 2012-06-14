@@ -1,5 +1,5 @@
 <?php
-class UserPhoto {
+class Photo {
     /** @brief JPEG 화질 */
     const JPEG_QUALITY = 60;
     //const DIR_FILE = '/home/kyoe/project/withblog/www/web/_dev/facechart/file';
@@ -20,12 +20,12 @@ class UserPhoto {
 
     /**
      * @brief 파일 디렉터리 경로를 반환
-     * @param $user_id int test.userthumb.userid
+     * @param $user_id int test.userphoto.photoid
      * @return string
      */
     private static function file_dir($user_id) {
         $group = self::group_number($user_id);
-        return DIR_MOBILE_FILE.'/user/'.$group;
+        return DIR_FILE.'/user/'.$group;
     }
 
     /**
@@ -35,7 +35,7 @@ class UserPhoto {
      */
     private static function file_url($user_id) {
         $group = self::group_number($user_id);
-        return URL_MOBILE_FILE.'/user/'.$group;
+        return URL_FILE.'/user/'.$group;
     }
 
     /**
@@ -44,14 +44,14 @@ class UserPhoto {
      * @param $warning object Warning 객체 참조
      * @return int
      */
-    public static function add($user_id, $files, &$warning = null) {
+    public static function add($user_id, $file, &$warning = null) {
         global $g;
 
         if ( !preg_match('/^[1-9][0-9]*$/', $user_id) ) {
             return Warning::make($warning, false, 'userid', 'idx(숫자)를 입력해주세요');
         }
 
-        $image_path = $files['profile_image']['tmp_name'];
+        $image_path = $file['tmp_name'];
 
         // 파일 디렉토리
         $file_dir = self::file_dir($user_id);
@@ -64,7 +64,6 @@ class UserPhoto {
         // 저장 경로
         $time = time();
         $save_path = $file_dir."/{$user_id}_{$time}.jpg";
-
 
         ## 원본 저장 ##
         $mime_type = mime_content_type($image_path);
@@ -102,12 +101,47 @@ class UserPhoto {
         // db 등록
         $createdate = date('Y-m-d H:i:s', $time);
         $sql = "INSERT test.userphoto SET
-                    userid = {$user_id},
-                    createdate = '{$createdate}'";
+                userid = {$user_id},
+                createdate = '{$createdate}'";
         $g->db->query($sql);
+		
+		$insert_id = (int)$g->db->insert_id();
 
-        return Warning::make($warning, true);
+        return Warning::make($warning, $insert_id);
     }
+
+	/**
+	 *@brief 이미지 삭제
+	 *@param $photo int tset.userphoto.id
+	 *@warning $warning object Warning 객체 참조
+	 *@return boolean
+	 */
+	public static function remove($photo_id, &$warning) {
+		global $g;
+
+		if ( !preg_match('/^[1-9][0-9]*$/', $photo_id) ) {
+            return Warning::make($warning, false, 'photoid', '존재하지 않는 이미지 입니다.');
+        }
+
+		$photo = new self($photo_id);
+
+		// db 삭제
+		$result = $g->db->query("
+			DELETE FROM test.userphoto
+			WHERE id = {$photo_id}
+		");
+
+		if ( !$result ) {
+ 			return Warning::make($warning, false, 'remove error', '삭제 실패');
+		}
+
+		// 이미지 파일 삭제
+		foreach ( $photo->photo_file as $file ) {
+			exec("rm {$file}");
+		}
+		
+		return Warning::make($warning, true);
+	}
 
     /**
      * @brief 이미지 파일에 해당하는 GD 이미지 리소스를 생성하여 반환한다.
@@ -210,12 +244,12 @@ class UserPhoto {
      * @brief 생성자
      * @param $user_id int test.userthumb.userid
      */
-    public function __construct($user_id) {
+    public function __construct($photo_id) {
         global $g;
 
         $row = $g->db->fetch_row("
             SELECT * FROM test.userphoto
-                WHERE userid = {$user_id}
+                WHERE id = {$photo_id}
         ");
 
         foreach ( $row as $k => $v ) {
@@ -240,6 +274,18 @@ class UserPhoto {
         }
     }
 
+	/**
+	 * @brief 배열형태
+	 * @return array
+	 */
+	public function to_array() {
+		$data = array( 
+			'id' => $this->id,
+			'user_id' => $this->userid,
+			'photo' => $this->photo 
+		);	
+		return $data;
+	}
 }
 
 ?>
