@@ -5,7 +5,7 @@ $pass = new PKPass();
 
 $pass->setCertificate('./certif/ngmsPassTypeId.p12');  // 2. Set the path to your Pass Certificate (.p12 file)
 //$pass->setCertificatePassword('test123');     // 2. Set password for certificate
-$pass->setCertificatePassword('test123');
+$pass->setCertificatePassword('face1234');
 $pass->setWWDRcertPath('./certif/Apple_Worldwide_Developer.pem'); // 3. Set the path to your WWDR Intermediate certificate (.pem file)
 
 // Top-Level Keys http://developer.apple.com/library/ios/#documentation/userexperience/Reference/PassKit_Bundle/Chapters/TopLevel.html
