@@ -12,7 +12,7 @@ $pass->setWWDRcertPath('./certif/Apple_Worldwide_Developer.pem'); // 3. Set the 
 $standardKeys         = array(
     'description'        => 'Demo pass',
     'formatVersion'      => 1,
-    'organizationName'   => 'Flight Express',
+    'organizationName'   => 'Kyoe Express',
     'passTypeIdentifier' => 'pass.skcc.ngms.pushexam', // 4. Set to yours
     'serialNumber'       => '123456',
     'teamIdentifier'     => 'NUG3DQ847F'           // 4. Set to yours
@@ -24,13 +24,13 @@ $styleKeys            = array(
         'primaryFields' => array(
             array(
                 'key'   => 'origin',
-                'label' => 'San Francisco',
-                'value' => 'SFO'
+                'label' => 'miya home',
+                'value' => '신림'
             ),
             array(
                 'key'   => 'destination',
-                'label' => '기호네',
-                'value' => '혜미'
+                'label' => 'kyoe home',
+                'value' => '사당'
             )
         ),
         'secondaryFields' => array(
@@ -42,7 +42,7 @@ $styleKeys            = array(
             array(
                 'key'   => 'date',
                 'label' => 'Departure date',
-                'value' => '07/11/2012 10:22'
+                'value' => '01/12/2013 12:00'
             )
         ),
         'backFields' => array(
