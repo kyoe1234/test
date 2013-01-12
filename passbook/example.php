@@ -29,8 +29,8 @@ $styleKeys            = array(
             ),
             array(
                 'key'   => 'destination',
-                'label' => 'London',
-                'value' => 'LHR'
+                'label' => '기호네',
+                'value' => '혜미'
             )
         ),
         'secondaryFields' => array(
