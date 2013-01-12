@@ -1,3 +1,3 @@
 <?
-echo 'hello';
+echo 'hello kyoe';
 ?>
