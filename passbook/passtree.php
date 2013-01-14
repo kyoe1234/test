@@ -15,22 +15,29 @@ $pass->setCertificate('./certif/ngmsPassTypeId.p12'); // Set the path to your Pa
 $pass->setCertificatePassword('face1234'); // Set password for certificate
 $pass->setWWDRcertPath('./certif/Apple_Worldwide_Developer.pem');
 $pass->setJSON('{
-    "passTypeIdentifier": "pass.skcc.ngms.pushexam",
-    "formatVersion": 1,
-    "organizationName": "Pass Tree",
-    "teamIdentifier": "NUG3DQ847F",
-    "serialNumber": "p69f2J",
-    "backgroundColor": "rgb(0,100,0)",
-    "logoText": "Pass Tree",
-    "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
-    "locations" : [
-      {
-        "longitude" : 126.738142,
-        "latitude" : 37.498653
-      }
-    ],
-    "description": "Store card",
-    "storeCard" : {
+  "formatVersion" : 1,
+  "passTypeIdentifier" : "pass.skcc.ngms.pushexam",
+  "serialNumber" : "p69f2J",
+  "teamIdentifier" : "NUG3DQ847F",
+  "webServiceURL" : "https://www.passtree.net/",
+  "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+  "locations" : [
+    {
+      "longitude" : 126.738142,
+      "latitude" : 37.498653
+    }
+  ],
+  "barcode" : {
+    "message" : "1234567890",
+    "format" : "PKBarcodeFormatQR",
+    "messageEncoding" : "iso-8859-1"
+  },
+  "organizationName" : "Pass Tree",
+  "description" : "Store card",
+  "logoText" : "Pass Tree",
+  "foregroundColor" : "rgb(255, 255, 255)",
+  "backgroundColor" : "rgb(0, 100, 0)",
+  "storeCard" : {
     "auxiliaryFields" : [
       {
         "key" : "name",
@@ -50,28 +57,23 @@ $pass->setJSON('{
         "value" : "이 패스는 오프라인에서 발급된 패스를 모바일용으로 전환된 것으로, 해당업체에서 정식으로 발급되지 않은 패스입니다. 바코드인식에 문제가 있는 경우 바코드넘버를 입력하여 사용해주세요."
       },
       {
-        "key" : "site",
+          "key" : "site",
         "label" : "Web Site",
         "value" : "웹사이트에 방문해서 다양한 패스를 등록하세요. http://passtree.net"
       },
       {
-        "key" : "app",
+          "key" : "app",
         "label" : "Appstore Link",
         "value" : "앱을 다운받아 더욱 손쉽게 패스를 등록하세요."
       },
       {
-        "key" : "email",
+          "key" : "email",
         "label" : "Contact Us",
         "value" : "help@passtree.net"
       },
     ]
-  },
-    "barcode": {
-        "format": "PKBarcodeFormatPDF417",
-        "message": "1234567890",
-        "messageEncoding": "iso-8859-1"
-    }
-    }');
+  }
+}');
 
 // add files to the PKPass package
 $pass->addFile('./first_pass/icon.png');
