@@ -80,6 +80,7 @@ $pass->addFile('./first_pass/icon.png');
 $pass->addFile('./first_pass/icon@2x.png');
 $pass->addFile('./first_pass/logo.png');
 $pass->addFile('./first_pass/background.png', './first_pass/strip.png');
+$pass->addFile('./first_pass/background.png', './first_pass/strip@2x.png');
 
 if(!$pass->create(true)) { // Create and output the PKPass
     echo 'Error: '.$pass->getError();
