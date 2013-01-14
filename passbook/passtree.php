@@ -19,7 +19,7 @@ $pass->setJSON('{
     "formatVersion": 1,
     "organizationName": "Pass Tree",
     "teamIdentifier": "NUG3DQ847F",
-    "serialNumber": "'.$id.'",
+    "serialNumber": "p69f2J",
     "backgroundColor": "rgb(0,100,0)",
     "logoText": "Pass Tree",
     "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
@@ -68,9 +68,8 @@ $pass->setJSON('{
   },
     "barcode": {
         "format": "PKBarcodeFormatPDF417",
-        "message": "'.$id.'",
-        "messageEncoding": "iso-8859-1",
-        "altText": "'.$id.'"
+        "message": "1234567890",
+        "messageEncoding": "iso-8859-1"
     }
     }');
 
