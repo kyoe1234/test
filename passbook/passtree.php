@@ -32,9 +32,9 @@ $pass->setJSON('{
     "format" : "PKBarcodeFormatQR",
     "messageEncoding" : "iso-8859-1"
   },
-  "organizationName" : "Pass Tree",
+  "organizationName" : "Pass Tree2",
   "description" : "Store card",
-  "logoText" : "Pass Tree",
+  "logoText" : "Pass Tree2",
   "foregroundColor" : "rgb(255, 255, 255)",
   "backgroundColor" : "rgb(0, 100, 0)",
   "storeCard" : {
