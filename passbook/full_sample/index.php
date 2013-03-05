@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['passenger'])){
 
     //Set certifivate and path in the constructor
     //$pass = new PKPass('../../Certificate.p12', 'test123');
-    $pass = new PKPass('../certif/ngmsPassTypeId.p12', 'face123');
+    $pass = new PKPass('../certif/ngmsPassTypeId.p12', 'face1234');
 
     // Add the WWDR certificate
     //$pass->setWWDRcertPath('../AppleWWDR.pem');
