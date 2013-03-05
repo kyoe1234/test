@@ -23,7 +23,7 @@ if(isset($_POST['name'])){
     "formatVersion": 1,
     "organizationName": "Starbucks",
     "teamIdentifier": "NUG3DQ847F",
-    "webServiceURL" : "https://kyoe.blogcocktail.com/test/passbook/pass_update.php",
+
     "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
     "serialNumber": "'.$id.'",
     "backgroundColor": "rgb(240,240,240)",
