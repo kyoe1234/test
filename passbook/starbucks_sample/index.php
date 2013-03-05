@@ -17,7 +17,7 @@ if(isset($_POST['name'])){
     //$pass->setCertificate('../../Certificate.p12'); // Set the path to your Pass Certificate (.p12 file)
     $pass->setCertificate('../certif/ngmsPassTypeId.p12'); // Set the path to your Pass Certificate (.p12 file)
     $pass->setCertificatePassword('face1234'); // Set password for certificate
-    $pass->setWWDRcertPath('../certif/AppleWWDR.pem');
+    $pass->setWWDRcertPath('../certif/Apple_Worldwide_Developer.pem');
     $pass->setJSON('{
     "passTypeIdentifier": "pass.skcc.ngms.pushexam",
     "formatVersion": 1,
