@@ -62,6 +62,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['passenger'])){
     "organizationName": "Flight Express",
     "serialNumber": "123456",
     "teamIdentifier": "NUG3DQ847F",
+	"authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+	"webServiceURL": "https://passtree.co.kr:45865/ant/www/web/_dev/update_test.php",
     "backgroundColor": "rgb(107,156,196)",
     "logoText": "Flight info",
     "description": "Demo pass",
