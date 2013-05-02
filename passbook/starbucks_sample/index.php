@@ -25,7 +25,7 @@ if(isset($_POST['name'])){
     "teamIdentifier": "NUG3DQ847F",
     "webServiceURL" : "https://passtree.co.kr:45865/ant/www/web/_dev/update_test.php?test=passtree",
     "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
-    "serialNumber": "755910-805-124",
+    "serialNumber": "755910-805-125",
     "backgroundColor": "rgb(240,240,240)",
     "logoText": "Starbucks",
     "description": "Demo pass",
